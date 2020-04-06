@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Radar Corona",
+    "slug": "Radar-Corona",
+    "platforms": [
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false
+    },
+      "android": {
+      "package": "com.fabiocosta.covidBR",
+      "versionCode": 1
+    }
+  }
+}
