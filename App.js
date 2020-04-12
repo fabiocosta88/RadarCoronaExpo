@@ -8,17 +8,21 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./pages/Home/Home";
 import Cares from "./pages/Cares/Cares";
 import About from "./pages/About/About";
+import Header from "./pages/Components/Header/Header";
 
 const Stack = createStackNavigator();
 
 export default function App() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="About">
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="About" component={About} />
-                <Stack.Screen name="Cares" component={Cares} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <>
+            <Header />
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName="About">
+                    <Stack.Screen name="Home" component={Home} />
+                    <Stack.Screen name="About" component={About} />
+                    <Stack.Screen name="Cares" component={Cares} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </>
     );
 }
