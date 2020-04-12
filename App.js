@@ -6,14 +6,18 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 // Components
 import Home from "./pages/Home/Home";
+import Cares from "./pages/Cares/Cares";
+import About from "./pages/About/About";
 
 const Stack = createStackNavigator();
 
 export default function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="About">
                 <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="About" component={About} />
+                <Stack.Screen name="Cares" component={Cares} />
             </Stack.Navigator>
         </NavigationContainer>
     );
