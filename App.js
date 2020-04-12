@@ -2,26 +2,24 @@ import React from "react";
 
 // Other Libs
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // Components
 import Home from "./pages/Home/Home";
 import Cares from "./pages/Cares/Cares";
 import About from "./pages/About/About";
-import Header from "./pages/Components/Header/Header";
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
     return (
         <>
-            <Header />
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="About">
-                    <Stack.Screen name="Home" component={Home} />
-                    <Stack.Screen name="About" component={About} />
-                    <Stack.Screen name="Cares" component={Cares} />
-                </Stack.Navigator>
+                <Drawer.Navigator initialRouteName="About">
+                    <Drawer.Screen name="Home" component={Home} />
+                    <Drawer.Screen name="About" component={About} />
+                    <Drawer.Screen name="Cares" component={Cares} />
+                </Drawer.Navigator>
             </NavigationContainer>
         </>
     );

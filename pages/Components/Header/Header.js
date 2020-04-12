@@ -3,10 +3,10 @@ import React from "react";
 // Libs
 import { Header as ElementsHeader } from "react-native-elements";
 
-export default function Header() {
+export default function Header({ open }) {
     return (
         <ElementsHeader
-            leftComponent={{ icon: "menu", color: "#fff"}}
+            leftComponent={{ icon: "menu", color: "#fff", onPress: () => open()}}
             centerComponent={{ text: "Radar Corona", style: { color: "#fff", fontSize: 28, fontWeight: 'bold'}}}
             rightComponent={{ icon: "home", color: "#fff"}}
             containerStyle={{
