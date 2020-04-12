@@ -8,5 +8,4 @@ export const ContainerView = styled.View`
 
 export const Text = styled.Text`
     color: rgb(0, 0, 0);
-    font-size: 20;
 `;
