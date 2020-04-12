@@ -7,12 +7,11 @@ export default function Header({ open }) {
     return (
         <ElementsHeader
             leftComponent={{ icon: "menu", color: "#fff", onPress: () => open()}}
-            centerComponent={{ text: "Radar Corona", style: { color: "#fff", fontSize: 28, fontWeight: 'bold'}}}
-            rightComponent={{ icon: "home", color: "#fff"}}
+            centerComponent={{ text: "Radar Corona", style: { color: "#fff", fontSize: 28, fontWeight: 'bold', top: -2}}}
             containerStyle={{
                 backgroundColor: '#A533FF',
                 justifyContent: 'space-around',
-                top: -15,
+                top: -18,
               }}
         />
     );
