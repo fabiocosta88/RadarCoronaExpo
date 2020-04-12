@@ -3,10 +3,18 @@ import React from "react";
 // Styled Components
 import { ContainerView, Text } from "./AboutStyles";
 
-export default function About() {
+import Header from "../Components/Header/Header";
+
+export default function About({ navigation }) {
+    const open = () => {
+        navigation.openDrawer();
+    };
     return (
-        <ContainerView>
-            <Text>Sobre os desenvolvedores</Text>
-        </ContainerView>
+        <>
+            <Header open={open} />
+            <ContainerView>
+                <Text>Sobre os desenvolvedores</Text>
+            </ContainerView>
+        </>
     );
 }

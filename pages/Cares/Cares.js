@@ -1,10 +1,20 @@
 import React from "react";
+
+// Styled Components
 import { ContainerView, Text } from "./CaresStyles";
 
-export default function Cares() {
+import Header from "../Components/Header/Header";
+
+export default function Cares({ navigation }) {
+    const open = () => {
+        navigation.openDrawer();
+    };
     return (
-        <ContainerView>
-            <Text>Cuidados que devemos tomar com o COVID-19</Text>
-        </ContainerView>
+        <>
+            <Header open={open} />
+            <ContainerView>
+                <Text>Cares</Text>
+            </ContainerView>
+        </>
     );
 }
