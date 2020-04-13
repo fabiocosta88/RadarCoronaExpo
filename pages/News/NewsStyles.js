@@ -1,12 +1,13 @@
-import styled from "styled-components/native";
+import {StyleSheet, Dimensions} from 'react-native';
 
-export const ContainerView = styled.View`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const Text = styled.Text`
-    color: rgb(0, 0, 0);
-    font-size: 20;
-`;
+export default StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center'
+      },
+      text: {
+          fontSize: 15,
+          textAlign: 'center',
+          fontWeight: 'bold'
+      }
+});
