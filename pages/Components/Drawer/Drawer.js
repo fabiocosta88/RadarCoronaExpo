@@ -17,7 +17,7 @@ import styles from './DrawerStyles';
         <>
         <View style={styles.containertitle}>
         <Image
-            style={{width: 60, height: 60}}
+            style={styles.image}
             source={require('../../../assets/icon.png')}
         />
         <Text style={styles.title}>Radar Corona</Text>
