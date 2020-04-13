@@ -9,7 +9,7 @@ export default StyleSheet.create({
     containertitle: {
         backgroundColor: '#A533FF',
         width: '100%',
-        height: '8%',
+        height: '7%',
         flexDirection: 'row'
       },
       title: {
@@ -17,7 +17,8 @@ export default StyleSheet.create({
       fontSize: 28,
       fontWeight: 'bold',
       textAlign: 'center',
-      top: 10
+      textAlignVertical: 'center',
+      left: '10%'
     },
     footer: {
         color: '#fff',
@@ -38,4 +39,8 @@ export default StyleSheet.create({
         flexDirection:'row',
         height:45
       },
+      image: {
+        width: 50,
+         height: 50
+      }
 });
