@@ -1,0 +1,6 @@
+export const endpoints = {
+    host: "https://corona.lmao.ninja",
+    routes: {
+        globalTotals: "/v2/all",
+    },
+};
