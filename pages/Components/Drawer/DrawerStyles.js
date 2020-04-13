@@ -6,13 +6,13 @@ export default StyleSheet.create({
       backgroundColor: '#fff',
       top: 5
     },
-    containertitulo: {
+    containertitle: {
         backgroundColor: '#A533FF',
         width: '100%',
         height: '8%',
         flexDirection: 'row'
       },
-    titulo: {
+      title: {
       color: '#fff',
       fontSize: 28,
       fontWeight: 'bold',
