@@ -1,6 +1,13 @@
-export const endpoints = {
-    host: "https://corona.lmao.ninja",
+export const endpointsCoronaLmao = {
+    host: 'https://corona.lmao.ninja',
     routes: {
-        globalTotals: "/v2/all",
+        globalTotals: '/v2/all',
+    },
+};
+
+export const endpointsNews = {
+    host: 'http://newsapi.org',
+    routes: {
+        topCoronaNewsBr: '/v2/top-headlines',
     },
 };
