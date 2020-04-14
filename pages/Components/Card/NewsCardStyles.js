@@ -2,11 +2,11 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center'
+        margin: 10,
+        padding: 10
       },
     card: {
-        height: '17%',
+        height: 340,
         flexDirection: 'row',
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
@@ -26,7 +26,7 @@ export default StyleSheet.create({
       title: {
         textAlign: 'center',
         top: '1%',
-        fontSize: 19,
+        fontSize: 18,
         fontWeight: 'bold',
       },
       image: {
@@ -35,17 +35,10 @@ export default StyleSheet.create({
           borderTopLeftRadius: 10,
           borderTopRightRadius: 10
       },
-      author: {
-        color: '#fff',
-        fontSize: 12,
-        left: '20%',
-        textAlign: 'left',
-        textAlignVertical: 'center',
-      },
       date: {
         color: '#fff',
         fontSize: 12,
-        left: '380%',
+        left: '20%',
         textAlign: 'left',
         textAlignVertical: 'center',
       },
@@ -60,5 +53,5 @@ export default StyleSheet.create({
         height: '8%',
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10
-      },
+      }
 });

@@ -2,9 +2,8 @@ import axios from 'axios';
 import { endpointsNews } from '../../shared/global';
 
 export default async function getTopNewsBr() {
-    const q = 'corona';
     const country = 'br';
-    const apiKey = '0f0ecd6476234a62b8661b1be945b153';
+    const apiKey = '0120b718a9734ca990ad1f8e1b087fe7';
     const category = 'health';
     const pageSize = '10';
     try {
@@ -14,7 +13,6 @@ export default async function getTopNewsBr() {
         } = endpointsNews;
         const response = await axios.get(`${host}${topCoronaNewsBr}`, {
             params: {
-                q,
                 country,
                 apiKey,
                 category,

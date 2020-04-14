@@ -14,7 +14,6 @@ export default function Home({ navigation }) {
     useEffect(() => {
         async function fetchData() {
             const response = await getGlobalTotals();
-            console.log(response);
             setData(response);
         }
         fetchData();

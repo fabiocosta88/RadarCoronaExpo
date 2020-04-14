@@ -24,11 +24,12 @@ export default function NewsCard({ title, image, description, author, url, publi
                         }}
                     />
                     <View style={styles.titlecontainer}>
-                        <Text style={styles.title}>{title}</Text>
+                        <Text numberOfLines={3} style={styles.title}>{title}</Text>
                     </View>
-                    <Text style={styles.text}>{description}</Text>
+                    <View>
+                    <Text numberOfLines={5} style={styles.text}>{description}</Text>
+                    </View>
                     <View style={styles.containerfooter}>
-                        <Text style={styles.author}>Por: {author}</Text>
                         <Text style={styles.date}>Publicado em: {publishedAt}</Text>
                     </View>
                 </TouchableOpacity>
