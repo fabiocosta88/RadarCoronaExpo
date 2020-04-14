@@ -6,8 +6,13 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        fontSize: 15,
+        fontSize: 14,
         textAlign: 'center',
-        fontWeight: 'bold',
+        color: '#fff'
     },
+    footercard: {
+        height: '5%',
+        width: '100%',
+        backgroundColor: '#A533FF'
+    }
 });
