@@ -1,13 +1,13 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center'
-      },
-      text: {
-          fontSize: 15,
-          textAlign: 'center',
-          fontWeight: 'bold'
-      }
+        alignItems: 'center',
+    },
+    text: {
+        fontSize: 15,
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
 });
