@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 // Services
-import getGlobalTotals from "../../utils/services/GlobalService";
+import getBrazilTotals from '../../utils/services/BrazilService';
 
 // Styled Components
-import { ContainerView, Text } from "./HomeStyles";
+import { ContainerView, Text, CardContainer } from './HomeStyles';
 
-import Header from "../Components/Header/Header";
+import Header from '../Components/Header/Header';
+import Card from './Card/Card';
 
 export default function Home({ navigation }) {
     const [data, setData] = useState([]);
+    const [updateDay, setUpdateDay] = useState('');
 
     useEffect(() => {
         async function fetchData() {
-            const response = await getGlobalTotals();
-            setData(response);
+            const response = await getBrazilTotals();
+            setData(response.location);
         }
         fetchData();
     }, []);
@@ -25,10 +27,14 @@ export default function Home({ navigation }) {
         <>
             <Header open={open} />
             <ContainerView>
-                <Text>Casos: {data.cases}</Text>
-                <Text>Casos de hoje: {data.todayCases}</Text>
-                <Text>Mortes: {data.deaths}</Text>
-                <Text>Mortes de hoje: {data.todayDeaths}</Text>
+                <CardContainer>
+                    <Card
+                        confirmed={data.latest.confirmed}
+                        deaths={data.latest.deaths}
+                    />
+                </CardContainer>
+                <Text>Ultima atualização:</Text>
+                <Text>{data.last_updated}</Text>
             </ContainerView>
         </>
     );

@@ -1,5 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
+import { colors } from '../../styles/colors';
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -8,11 +10,11 @@ export default StyleSheet.create({
     text: {
         fontSize: 14,
         textAlign: 'center',
-        color: '#fff'
+        color: colors.white,
     },
     footercard: {
         height: '5%',
         width: '100%',
-        backgroundColor: '#A533FF'
-    }
+        backgroundColor: colors.primary,
+    },
 });
