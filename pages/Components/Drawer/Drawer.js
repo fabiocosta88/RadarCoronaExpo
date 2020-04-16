@@ -12,6 +12,8 @@ import About from '../../About/About';
 import News from '../../News/News';
 const Drawer = createDrawerNavigator();
 
+import { colors } from '../../../styles/colors';
+
 // Styles
 import styles from './DrawerStyles';
 
@@ -27,9 +29,9 @@ function CustomDrawerContent(props) {
             </View>
             <View style={styles.container}>
                 <DrawerItemList
-                    activeTintColor='#A533FF'
+                    activeTintColor={colors.primary}
                     labelStyle={{
-                        color: '#000',
+                        color: colors.black,
                         fontSize: 14,
                     }}
                     {...props}
