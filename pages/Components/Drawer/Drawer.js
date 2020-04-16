@@ -8,7 +8,7 @@ import { View, Text, Image } from 'react-native';
 // Components
 import Home from '../../Home/Home';
 import Cares from '../../Cares/Cares';
-import About from '../../About/About';
+import Config from '../../Config/Config'
 import News from '../../News/News';
 const Drawer = createDrawerNavigator();
 
@@ -57,7 +57,7 @@ export default function MyDrawer() {
                 component={Cares}
             />
             <Drawer.Screen name='Notícias' component={News} />
-            <Drawer.Screen name='Sobre o aplicativo' component={About} />
+            <Drawer.Screen name='Configurações' component={Config} />
         </Drawer.Navigator>
     );
 }
