@@ -7,13 +7,16 @@ import { NavigationContainer } from '@react-navigation/native';
 // Components
 import MyDrawer from './pages/Components/Drawer/Drawer';
 
+// Colors
+import { colors } from './styles/colors';
+
 export default function App() {
     return (
         <>
             <StatusBar
                 barStyle='dark-content'
                 hidden={false}
-                backgroundColor='#1B95E0'
+                backgroundColor={colors.white}
             />
             <NavigationContainer>
                 <MyDrawer />

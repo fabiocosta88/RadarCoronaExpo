@@ -2,6 +2,14 @@ export const endpointsCoronaLmao = {
     host: 'https://corona.lmao.ninja',
     routes: {
         globalTotals: '/v2/all',
+        brazilTotals: '/v2/countries/brazil',
+    },
+};
+
+export const endpointsCoronaTracker = {
+    host: 'http://coronavirus-tracker-api.herokuapp.com',
+    routes: {
+        brazilTotals: '/v2/locations/28',
     },
 };
 

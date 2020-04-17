@@ -1,9 +1,8 @@
 export const colors = {
-    primary: '#1B95E0',
-    darkerBlue: '#4764F1',
-    lighterBlue: '#60AFFE',
+    primary: '#19196F',
     white: '#fff',
     black: '#000',
-    yellow: 'yellow',
-    red: 'red',
+    yellow: '#FED728',
+    redPink: '#EA5E88',
+    green: '#85C06C',
 };

@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { endpointsCoronaTracker } from '../../shared/global';
+import { endpointsCoronaLmao } from '../../shared/global';
 
 export default async function getBrasilTotals() {
     try {
         const {
             host,
             routes: { brazilTotals },
-        } = endpointsCoronaTracker;
+        } = endpointsCoronaLmao;
         const response = await axios.get(`${host}${brazilTotals}`);
         return response.data;
     } catch (error) {

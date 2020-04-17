@@ -1,29 +1,15 @@
 import React from 'react';
 
-import {
-    ContainerView,
-    TitleContainer,
-    Text,
-    Label,
-    Casos,
-    CasosNumber,
-    DeathsNumber,
-} from './CardStyles';
+import { Label, Casos, CasosNumber, DataContainer, Color } from './CardStyles';
 
-export default function Card({ confirmed, deaths }) {
+export default function Card({ title, info, color }) {
     return (
-        <ContainerView>
-            <TitleContainer>
-                <Text>Brasil</Text>
-            </TitleContainer>
-            <Label>
-                <Casos>Casos confirmados:</Casos>
-                <CasosNumber>{confirmed}</CasosNumber>
-            </Label>
-            <Label>
-                <Casos>Falecimentos:</Casos>
-                <DeathsNumber>{deaths}</DeathsNumber>
-            </Label>
-        </ContainerView>
+        <Label>
+            <Color color={color} />
+            <DataContainer>
+                <CasosNumber color={color}>{info}</CasosNumber>
+                <Casos>{title}</Casos>
+            </DataContainer>
+        </Label>
     );
 }

@@ -13,7 +13,6 @@ export default function Header({ open }) {
                 onPress: () => open(),
             }}
             centerComponent={{
-                text: 'Radar Corona',
                 style: {
                     color: '#fff',
                     fontSize: 24,
