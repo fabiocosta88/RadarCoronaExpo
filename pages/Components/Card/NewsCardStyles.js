@@ -13,7 +13,7 @@ export default StyleSheet.create({
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
         margin: 10,
-        top: '-3%',
+        top: '-1%',
     },
     titlecontainer: {
         left: '1%',
@@ -50,7 +50,7 @@ export default StyleSheet.create({
         left: 0,
         right: 0,
         bottom: -10,
-        backgroundColor: colors.darkerBlue,
+        backgroundColor: colors.primary,
         flexDirection: 'row',
         height: '8%',
         borderBottomLeftRadius: 10,

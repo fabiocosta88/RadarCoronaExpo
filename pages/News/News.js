@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList, Text } from 'react-native';
+
 // Service
 import getTopNewsBr from '../../utils/services/NewsBrService';
 
 // Styled Components
 
 // Components
-import Header from '../Components/Header/Header';
 import NewsCard from '../Components/Card/NewsCard';
-import Card from '../Components/Card/Card';
 
 //Styles
 import styles from './NewsStyles';
 
-export default function News({ navigation }) {
+export default function News() {
 
     const [data, setData] = useState(0);
 
@@ -25,13 +24,9 @@ export default function News({ navigation }) {
         fetchData();
     });
 
-    const open = () => {
-        navigation.openDrawer();
-    };
-
     return (
         <>
-            <Header open={open} />
+                <Text style={styles.title}>Últimas notícias</Text>
                 <FlatList
                     data={data.articles}
                     renderItem={({ item }) => (
@@ -59,28 +54,6 @@ export default function News({ navigation }) {
                     </View>
                     )}
                 />
-
-                    <Card style={styles.footercard}>
-                        <Text style={styles.text}>
-                            Fique atento às fake news, não compartilhe mentiras!
-                        </Text>
-                        <View
-                            style={{
-                                flexDirection: 'row',
-                                alignSelf: 'center',
-                            }}
-                        >
-                            <Text style={styles.text}>Powered by </Text>
-                            <Text
-                                style={styles.text}
-                                onPress={() =>
-                                    Linking.openURL('https://newsapi.org/')
-                                }
-                            >
-                                NEWSAPI.org
-                            </Text>
-                        </View>
-                    </Card>
         </>
     );
 }

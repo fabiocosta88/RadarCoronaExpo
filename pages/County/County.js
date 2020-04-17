@@ -15,7 +15,7 @@ import {
     SubTitle,
     Updated,
     CardContainer,
-} from './HomeStyles';
+} from './CountyStyles';
 
 import Card from './Card/Card';
 

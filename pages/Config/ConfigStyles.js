@@ -8,6 +8,9 @@ export default StyleSheet.create({
     item: {
         padding: 1
     },
+    card: {
+        top: '5%'
+    },
     text: {
         fontSize: 24,
         left: '3%',
