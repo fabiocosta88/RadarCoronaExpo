@@ -6,10 +6,7 @@ import { Linking } from 'expo';
 import styles from "./ConfigStyles";
 
 // Custom Components
-import Header from "../Components/Header/Header";
 import Card from '../Components/Card/Card';
-
-const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const data = {
     configs: [
@@ -119,19 +116,13 @@ function FlatListItemSeparator() {
     );
   }
 
-export default function Config({ navigation }) {
+export default function Config() {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [modalText, setModalText] = useState(data.configs[1].name);
 
-    const open = () => {
-        navigation.openDrawer();
-    };
-
     return (
         <>
-            <Header open={open} />
-
             <View style={styles.container}>
 
                 <Modal
@@ -155,7 +146,7 @@ export default function Config({ navigation }) {
                     </View>
                 </Modal>
 
-                <Card>
+                <Card style={styles.card}>
                     <Text style={styles.title}>Configurações</Text>
 
                     <FlatList

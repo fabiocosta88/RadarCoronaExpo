@@ -1,26 +1,23 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 
-// Other Libs
-import { NavigationContainer } from '@react-navigation/native';
-
 // Components
-import MyDrawer from './pages/Components/Drawer/Drawer';
+import MyTabs from './pages/Components/TabsNavigator/Tabs';
 
 // Colors
 import { colors } from './styles/colors';
+
+console.disableYellowBox = true;
 
 export default function App() {
     return (
         <>
             <StatusBar
-                barStyle='dark-content'
+                barStyle='light-content'
                 hidden={false}
-                backgroundColor={colors.white}
+                backgroundColor={colors.primary}
             />
-            <NavigationContainer>
-                <MyDrawer />
-            </NavigationContainer>
+            <MyTabs />
         </>
     );
 }

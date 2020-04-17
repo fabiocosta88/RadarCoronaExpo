@@ -17,4 +17,10 @@ export default StyleSheet.create({
         width: '100%',
         backgroundColor: colors.primary,
     },
+    title: {
+        fontSize: 36,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        top: '1%',
+    }
 });

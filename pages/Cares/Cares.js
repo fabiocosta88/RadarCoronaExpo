@@ -5,18 +5,14 @@ import {View, Text, Image, ScrollView} from 'react-native';
 import styles from "./CaresStyles";
 
 // Custom Components
-import Header from "../Components/Header/Header";
 import Card from '../Components/Card/Card';
 
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
-export default function Cares({ navigation }) {
-    const open = () => {
-        navigation.openDrawer();
-    };
+export default function Cares() {
+
     return (
         <>
-            <Header open={open} />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom : 300}}>
                 <View style={styles.container}>
                         <Card style={styles.cardtitle}>
