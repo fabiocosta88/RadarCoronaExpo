@@ -7,6 +7,7 @@ import styles from "./ConfigStyles";
 
 // Custom Components
 import Card from '../Components/Card/Card';
+import { colors } from '../../styles/colors';
 
 const data = {
     configs: [
@@ -135,7 +136,7 @@ export default function Config() {
                             {modalText}
 
                             <TouchableHighlight
-                                style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+                                style={{ ...styles.openButton, backgroundColor: colors.primary}}
                                 onPress={() => {
                                     setModalVisible(!modalVisible);
                                 }}
