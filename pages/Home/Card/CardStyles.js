@@ -2,56 +2,44 @@ import styled from 'styled-components/native';
 
 import { colors } from '../../../styles/colors';
 
-export const ContainerView = styled.View`
-    height: 500px;
-    width: 350px;
-    background-color: ${colors.lighterBlue};
-    border-radius: 15px;
-`;
-
-export const Text = styled.Text`
-    color: ${colors.white};
-    font-size: 40;
-    font-weight: bold;
-    margin: 0 auto;
-`;
-
-export const TitleContainer = styled.View`
-    font-size: 20;
-    background-color: ${colors.darkerBlue};
-    height: 90px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display: flex;
-    justify-content: center;
-`;
+export const handleColorType = (color) => {
+    return color;
+};
 
 export const Label = styled.View`
-    background-color: ${colors.darkerBlue};
-    height: 80px;
+    background-color: ${colors.white};
     width: 90%;
     margin: 0 auto;
-    margin-top: 10px;
-    padding-top: 5px;
+    border-radius: 25px;
+    height: 120px;
+    margin-bottom: 20px;
 `;
 
 export const Casos = styled.Text`
-    color: ${colors.white};
+    color: ${colors.black};
     font-weight: bold;
-    font-size: 20;
-    margin: 0 auto;
+    font-size: 25;
 `;
 
 export const CasosNumber = styled.Text`
-    color: ${colors.yellow};
+    color: ${({ color }) => handleColorType(color)};
     font-weight: bold;
-    font-size: 30;
-    margin: 0 auto;
+    font-size: 37;
 `;
 
-export const DeathsNumber = styled.Text`
-    color: ${colors.red};
-    font-weight: bold;
-    font-size: 30;
+export const DataContainer = styled.View`
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
     margin: 0 auto;
+    top: -73px;
+`;
+
+export const Color = styled.View`
+    width: 2px;
+    border: 2px solid ${({ color }) => handleColorType(color)};
+    background-color: ${({ color }) => handleColorType(color)};
+    height: 55px;
+    margin-top: 35px;
+    border-radius: 5px;
 `;

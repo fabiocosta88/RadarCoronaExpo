@@ -4,19 +4,28 @@ import React, { useState, useEffect } from 'react';
 import getBrazilTotals from '../../utils/services/BrazilService';
 
 // Styled Components
-import { ContainerView, Text, CardContainer } from './HomeStyles';
+import {
+    ContainerView,
+    Title,
+    TitleContainer,
+    SubTitle,
+    Updated,
+    CardContainer,
+} from './HomeStyles';
 
 import Header from '../Components/Header/Header';
 import Card from './Card/Card';
 
+// Colors
+import { colors } from '../../styles/colors';
+
 export default function Home({ navigation }) {
     const [data, setData] = useState([]);
-    const [updateDay, setUpdateDay] = useState('');
 
     useEffect(() => {
         async function fetchData() {
             const response = await getBrazilTotals();
-            setData(response.location);
+            setData(response);
         }
         fetchData();
     }, []);
@@ -27,14 +36,28 @@ export default function Home({ navigation }) {
         <>
             <Header open={open} />
             <ContainerView>
+                <TitleContainer>
+                    <Title>Brasil</Title>
+                    <SubTitle>Dados gerais</SubTitle>
+                    <Updated>Atualizado em: 16/04/2020 as 20:33</Updated>
+                </TitleContainer>
                 <CardContainer>
                     <Card
-                        confirmed={data.latest.confirmed}
-                        deaths={data.latest.deaths}
+                        title='Casos confirmados'
+                        info={data.cases}
+                        color={colors.yellow}
+                    />
+                    <Card
+                        title='Óbitos'
+                        info={data.deaths}
+                        color={colors.redPink}
+                    />
+                    <Card
+                        title='Testes'
+                        info={data.tests}
+                        color={colors.green}
                     />
                 </CardContainer>
-                <Text>Ultima atualização:</Text>
-                <Text>{data.last_updated}</Text>
             </ContainerView>
         </>
     );
