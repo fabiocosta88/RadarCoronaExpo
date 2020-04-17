@@ -7,26 +7,27 @@ export const handleColorType = (color) => {
 };
 
 export const Label = styled.View`
+    align-self: center;
     background-color: ${colors.white};
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 25px;
-    height: 120px;
+    width: 40%;
+    border-radius: 10px;
+    left: 30%;
+    margin-right: 5%;
+    height: 80px;
     margin-bottom: 20px;
+    elevation: 6;
 `;
 
 export const Casos = styled.Text`
     color: ${colors.black};
     font-weight: bold;
-    font-size: 25;
-    left: -5%;
+    font-size: 18;
 `;
 
 export const CasosNumber = styled.Text`
     color: ${({ color }) => handleColorType(color)};
     font-weight: bold;
-    font-size: 37;
-    left: -5%;
+    font-size: 36;
 `;
 
 export const DataContainer = styled.View`
@@ -34,14 +35,14 @@ export const DataContainer = styled.View`
     display: flex;
     justify-content: flex-start;
     margin: 0 auto;
-    top: -73px;
+    top: -60px;
 `;
 
 export const Color = styled.View`
-    width: 2px;
+    width: 1.5px;
     border: 2px solid ${({ color }) => handleColorType(color)};
     background-color: ${({ color }) => handleColorType(color)};
-    height: 55px;
-    margin-top: 35px;
-    border-radius: 5px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
 `;
