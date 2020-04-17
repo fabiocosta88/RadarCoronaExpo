@@ -2,6 +2,14 @@ import styled from 'styled-components/native';
 
 import { colors } from '../../styles/colors';
 
+export const ViewCustom = styled.View`
+    flex-direction: row;
+`;
+
+export const ViewCounty = styled.ScrollView`
+    margin-top: 4%;
+`;
+
 export const ContainerView = styled.View`
     height: 100%;
     align-items: center;
@@ -9,9 +17,53 @@ export const ContainerView = styled.View`
     background-color: ${colors.primary};
 `;
 
-export const Text = styled.Text`
-    color: ${colors.white};
+export const Image = styled.Image`
+    align-self: center;
+    width: 256;
+    height: 256;
+    top: 30%;
+`;
+
+export const MediumTitle = styled.Text`
+    color: ${colors.black};
+    top: -2%;
+    text-align: center;
+    font-size: 24;
+    font-weight: bold;
+`;
+
+export const CityTitle = styled.Text`
+    color: ${colors.black};
+    top: -1.4%;
+    text-align: center;
+    font-size: 30;
+    font-weight: bold;
+`;
+
+export const CityUpdate = styled.Text`
+    color: ${colors.black};
+    top: -2%;
     font-size: 20;
+    text-align: center;
+    font-size: 14;
+    font-weight: bold;
+`;
+
+export const Text = styled.Text`
+    color: ${colors.black};
+    font-size: 20;
+    text-align: center;
+    font-size: 18;
+    font-weight: bold;
+`;
+
+export const NothingText = styled.Text`
+    color: ${colors.black};
+    font-size: 20;
+    top: 35%;
+    text-align: center;
+    font-size: 18;
+    font-weight: bold;
 `;
 
 export const CardContainer = styled.View`
@@ -30,20 +82,8 @@ export const Title = styled.Text`
 `;
 
 export const TitleContainer = styled.View`
-    flex: 2;
+    flex: 1;
     display: flex;
     width: 80%;
     justify-content: flex-start;
-`;
-
-export const SubTitle = styled.Text`
-    font-size: 28;
-    left: -5%;
-    color: ${colors.white};
-`;
-
-export const Updated = styled.Text`
-    font-size: 16;
-    left: -5%;
-    color: ${colors.white};
 `;
