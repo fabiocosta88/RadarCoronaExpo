@@ -15,8 +15,11 @@ export const Text = styled.Text`
 `;
 
 export const CardContainer = styled.View`
+    background-color: ${colors.white};
     width: 100%;
     flex: 8;
+    border-top-right-radius: 20;
+    border-top-left-radius: 20;
 `;
 
 export const Title = styled.Text`
