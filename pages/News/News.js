@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 // Service
 import getTopNewsBr from '../../utils/services/NewsBrService';
 
 // Styled Components
+import {
+    Container,
+    Title,
+    Background,
+    Text
+} from './NewsStyles'
 
 // Components
-import NewsCard from '../Components/Card/NewsCard';
+import NewsCard from './Card/NewsCard';
 
-//Styles
-import styles from './NewsStyles';
+function emptyList() {
+    return (
+      <View>
+          <Text>Poxa, parece que estamos enfrentando problemas com nossa fonte de notícias, mas estamos buscando a solução!</Text>
+    </View>
+    );
+  }
 
 export default function News() {
 
@@ -26,11 +37,14 @@ export default function News() {
 
     return (
         <>
-                <Text style={styles.title}>Últimas notícias</Text>
+            <Background>
+                <Title>Últimas notícias</Title>
                 <FlatList
                     data={data.articles}
+                    initialNumToRender= {10}
+                    ListEmptyComponent={emptyList}
                     renderItem={({ item }) => (
-                        <View style={styles.container}>
+                        <Container>
                             <NewsCard
                                 title={
                                     item.title
@@ -51,9 +65,10 @@ export default function News() {
                                     item.publishedAt
                                 }
                             />
-                    </View>
+                    </Container>
                     )}
                 />
+            </Background>
         </>
     );
 }
