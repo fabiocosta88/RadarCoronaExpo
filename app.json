@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1c3496"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +24,7 @@
     },
       "android": {
       "package": "com.fabiocosta.covidBR",
-      "versionCode": 1
+      "versionCode": 2
     }
   }
 }
