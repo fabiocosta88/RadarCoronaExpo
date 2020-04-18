@@ -2,7 +2,7 @@ import axios from 'axios';
 import { endpointsNews } from '../../shared/global';
 
 export default async function getTopNewsBr() {
-    const apiKey = '0120b718a9734ca990ad1f8e1b087fe7';
+    const apiKey = '0f0ecd6476234a62b8661b1be945b153';
     const pageSize = '15';
     const sources = 'globo'
     try {
