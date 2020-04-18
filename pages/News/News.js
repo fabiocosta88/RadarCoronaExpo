@@ -5,7 +5,14 @@ import { FlatList, View, ActivityIndicator } from 'react-native';
 import getTopNewsBr from '../../utils/services/NewsBrService';
 
 // Styled Components
-import { Container, Title, Background, Text } from './NewsStyles';
+import {
+    Container,
+    Title,
+    Background,
+    PinkLabel,
+    FakeNewsAlert,
+    LoadWraper,
+} from './NewsStyles';
 
 // Components
 import NewsCard from './Card/NewsCard';
@@ -16,7 +23,9 @@ import { colors } from '../../styles/colors';
 function emptyList() {
     return (
         <View>
-            <ActivityIndicator size='large' color={colors.redPink} />
+            <LoadWraper>
+                <ActivityIndicator size='large' color={colors.redPink} />
+            </LoadWraper>
         </View>
     );
 }

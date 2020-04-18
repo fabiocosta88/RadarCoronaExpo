@@ -2,6 +2,10 @@ import styled from 'styled-components/native';
 
 import { colors } from '../../styles/colors';
 
+const handleOpacity = (opacity) => {
+    return opacity;
+};
+
 export const ContainerView = styled.View`
     height: 100%;
     align-items: center;
@@ -24,6 +28,15 @@ export const Title = styled.Text`
     left: -5%;
     font-weight: bold;
     color: ${colors.white};
+    opacity: ${({ opacity }) => handleOpacity(opacity)};
+`;
+
+export const GlobalTitle = styled.Text`
+    font-size: 48;
+    left: -5%;
+    font-weight: bold;
+    color: ${colors.white};
+    opacity: ${({ opacity }) => handleOpacity(opacity)};
 `;
 
 export const TitleContainer = styled.View`
@@ -43,4 +56,10 @@ export const Updated = styled.Text`
     font-size: 16;
     left: -5%;
     color: ${colors.white};
+`;
+
+export const GlobalContainer = styled.View`
+    width: 100%;
+    padding-left: 45%;
+    margin-top: -62px;
 `;
