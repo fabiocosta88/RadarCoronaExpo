@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
+
 // Services
 import getValeTotals from '../../utils/services/ValeService';
 
@@ -15,10 +16,10 @@ import {
     CityTitle,
     CityUpdate,
     MediumTitle,
-    NothingText
+    NothingText,
 } from './CountyStyles';
 
-import { colors } from '../../styles/colors'
+import { colors } from '../../styles/colors';
 
 import Card from './Card/Card';
 import { Dropdown } from 'react-native-material-dropdown';
@@ -30,25 +31,53 @@ export default function County() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await getValeTotals();
-            setData(response.cities);
+            const response = await getValeTotals(
+                selectedCounty.toLowerCase().replace(/ /, '_')
+            );
+            console.log(response);
+            setData(response);
         }
         fetchData();
-    }, []);
+    }, [selectedCounty]);
 
-    let cities = [{
-        value: 'Cruzeiro',
-      }, {
-        value: 'Cachoeira Paulista',
-      }, {
-        value: 'Guaratingueta',
-      }, {
-        value: 'Lavrinhas',
-      }, {
-        value: 'Lorena',
-      }];
+    let cities = [
+        {
+            value: 'Cruzeiro',
+        },
+        {
+            value: 'Cachoeira Paulista',
+        },
+        {
+            value: 'Guaratingueta',
+        },
+        {
+            value: 'Lavrinhas',
+        },
+        {
+            value: 'Lorena',
+        },
+    ];
 
-      const newData = data;
+    const newData = data;
+
+    const {
+        cases,
+        casesNegative,
+        city_name,
+        deaths,
+        imported_cases,
+        newCases,
+        newDeaths,
+        newSuspects,
+        recovered,
+        status,
+        suspectsDeath,
+        suspectsHome,
+        suspectsHospital,
+        suspectsTotal,
+        suspectsUti,
+        update,
+    } = data;
 
     return (
         <>
@@ -57,21 +86,24 @@ export default function County() {
                     <Title>Municípios</Title>
                 </TitleContainer>
                 <CardContainer>
-
                     <Dropdown
                         label='Município'
                         fontSize={16}
                         labelFontSize={18}
                         data={cities}
                         baseColor='#000'
-                        containerStyle={{width: '85%', left: '7.5%', top: '-0.5%'}}
-                        onChangeText={(value)=> {
+                        containerStyle={{
+                            width: '85%',
+                            left: '7.5%',
+                            top: '-0.5%',
+                        }}
+                        onChangeText={(value) => {
                             setselectedCounty(value);
                             setshowThings(false);
                         }}
                     />
 
-                    {showThings &&
+                    {showThings && (
                         <View>
                             <Image
                                 source={require('../../assets/sadface.png')}
@@ -80,47 +112,45 @@ export default function County() {
                                 Nenhum município selecionado.
                             </NothingText>
                         </View>
-                    }
+                    )}
 
-                    {!showThings &&
+                    {!showThings && (
                         <ViewCounty showsVerticalScrollIndicator={false}>
-                            <CityTitle>
-                                Cachoeira Paulista
-                            </CityTitle>
-                            <CityUpdate>Atualizado em: 10/10/2010 às 10:10</CityUpdate>
+                            <CityTitle>{city_name}</CityTitle>
+                            <CityUpdate>Atualizado em: {update}</CityUpdate>
                             <ViewCustom>
                                 <Card
                                     title='Casos'
-                                    info={86}
+                                    info={cases}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Óbitos'
-                                    info={4}
+                                    info={deaths}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='Recuperados'
-                                    info={12}
+                                    info={recovered}
                                     color={colors.green}
                                 />
                                 <Card
                                     title='Suspeitos'
-                                    info={69}
+                                    info={suspectsTotal}
                                     color={colors.purple}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='Negativos'
-                                    info={11}
+                                    info={casesNegative}
                                     color={colors.green}
                                 />
                                 <Card
                                     title='Importados'
-                                    info={4}
+                                    info={imported_cases}
                                     color={colors.purple}
                                 />
                             </ViewCustom>
@@ -128,12 +158,12 @@ export default function County() {
                             <ViewCustom>
                                 <Card
                                     title='Casos Hoje'
-                                    info={8}
+                                    info={newCases}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Óbitos Hoje'
-                                    info={2}
+                                    info={newDeaths}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
@@ -141,30 +171,29 @@ export default function County() {
                             <ViewCustom>
                                 <Card
                                     title='Em casa'
-                                    info={63}
+                                    info={suspectsHome}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Enfermaria'
-                                    info={11}
+                                    info={suspectsHospital}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='UTI'
-                                    info={8}
+                                    info={suspectsUti}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Óbitos'
-                                    info={9}
+                                    info={suspectsDeath}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
                         </ViewCounty>
-                    }
-
+                    )}
                 </CardContainer>
             </ContainerView>
         </>

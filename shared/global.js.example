@@ -19,3 +19,10 @@ export const endpointsNews = {
         topCoronaNewsBr: '/v2/top-headlines',
     },
 };
+
+export const endpointsCoronaVale = {
+    host: 'https://fabiocosta88.github.io',
+    routes: {
+        cities: '/CovidValeAPI/cities/',
+    },
+};
