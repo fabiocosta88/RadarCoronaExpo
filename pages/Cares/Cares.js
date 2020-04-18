@@ -1,113 +1,139 @@
 import React from "react";
-import {View, Text, Image, ScrollView} from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 // Styled Components
-import styles from "./CaresStyles";
+import {
+    Text,
+    Title,
+    TextContainer,
+    BigText,
+    BigTitle,
+    Image,
+    Container,
+    BigTitleContainer,
+    TitleContainer
+} from './CaresStyles'
 
 // Custom Components
 import Card from '../Components/Card/Card';
+import { colors } from '../../styles/colors'
 
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
+
+
+const styles = StyleSheet.create({
+    card: {
+        padding: 10,
+        margin: 10,
+        height: '7%',
+        flexDirection: 'row',
+        borderRadius: 15,
+    },
+    cardTest: {
+        margin: 5,
+        height: '14%',
+        borderRadius: 15,
+        margin: 10,
+    },
+    cardTestBig: {
+        margin: 5,
+        height: '16%',
+        borderRadius: 15,
+        margin: 10,
+    },
+    cardTiny: {
+        margin: 5,
+        height: '4%',
+        borderRadius: 15,
+        margin: 10,
+    },
+});
 
 export default function Cares() {
 
     return (
         <>
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom : 300}}>
-                <View style={styles.container}>
-                        <Card style={styles.cardtitle}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.title}>O que é coronavírus? (COVID-19)</Text>
-                            </View>
+        <View style={{backgroundColor: colors.primary}}>
+            <BigTitle>Prevenções</BigTitle>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
+                paddingBottom : 200,
+                backgroundColor: colors.primary}}
+            >
+                <Container>
+
+                        <Card style={styles.cardTest}>
+                            <TitleContainer>
+                                <Title>O que é COVID-19?</Title>
+                            </TitleContainer>
+                            <BigText><B>COVID-19</B> é uma doença causada por um vírus da família dos coronavírus. Registros da doença iniciaram-se no ano de 2019, mas a identificação do agente causador e as consequências dessa infecção ocorreram somente em 2020.</BigText>
                         </Card>
 
-                        <Card style={styles.cardbig}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.textbig}><B>COVID-19</B> é uma doença causada por um vírus da família dos coronavírus. Registros da doença iniciaram-se no ano de 2019, mas a identificação do agente causador e as consequências dessa infecção ocorreram somente em 2020.
-                                </Text>
-                            </View>
-                        </Card>
-
-                        <Card style={styles.cardtitle}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.title}>Como é transmitido?</Text>
-                            </View>
-                        </Card>
-
-                        <Card style={styles.cardbig}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.textbig}>A transmissão dos coronavírus ocorre pelo <B>ar</B> ou por <B>contato com secreções contaminadas</B>, como:
+                        <Card style={styles.cardTestBig}>
+                            <TitleContainer>
+                                <Title>Como é transmitido?</Title>
+                            </TitleContainer>
+                            <BigText>A transmissão dos coronavírus ocorre pelo <B>ar</B> ou por <B>contato com secreções contaminadas</B>, como:
                                 gotículas de saliva, espirro, tosse, contato pessoal, como aperto de mão, contato com superfícies contaminadas, seguido de contato com a boca, nariz ou olhos.
-                                </Text>
-                            </View>
+                                </BigText>
                         </Card>
 
-                        <Card style={styles.cardtitle}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.title}>Quais os sintomas?</Text>
-                            </View>
+                        <Card style={styles.cardTestBig}>
+                            <TitleContainer>
+                                <Title>Quais os sintomas?</Title>
+                            </TitleContainer>
+                            <BigText><B>Febre</B>, <B>cansaço</B> e <B>tosse seca</B> são os principais sintomas apresentados. {"\n"} Alguns indivíduos também têm dores no corpo, coriza, dor de garganta e diarreia. Além disso, segundo a OMS, uma em cada seis pessoas sente dificuldade para respirar.
+                                </BigText>
                         </Card>
 
-                        <Card style={styles.cardbig}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.textbig}><B>Febre</B>, <B>cansaço</B> e <B>tosse seca</B> são os principais sintomas apresentados. {"\n"} Alguns indivíduos também têm dores no corpo, coriza, dor de garganta e diarreia. Além disso, segundo a OMS, uma em cada seis pessoas sente dificuldade para respirar.
-                                </Text>
-                            </View>
-                        </Card>
-
-                        <Card style={styles.cardtitle}>
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.title}>Como prevenir o contágio:</Text>
-                            </View>
+                        <Card style={styles.cardTiny}>
+                            <BigTitleContainer>
+                                <Title>Como prevenir o contágio:</Title>
+                            </BigTitleContainer>
                         </Card>
 
                         <Card style={styles.card}>
                             <Image
-                                style={styles.image}
                                 source={require('../../assets/cuidado1.png')}
                             />
-                            <View style={styles.textcontainer}>
-                                <Text style={styles.text}>Lave as mãos com água e sabão ou use álcool em gel.</Text>
-                            </View>
+                            <TextContainer>
+                                <BigText>Lave as mãos com água e sabão ou use álcool em gel.</BigText>
+                            </TextContainer>
                         </Card>
 
                         <Card style={styles.card}>
                             <Image
-                                style={styles.image}
                                 source={require('../../assets/cuidado2.png')}
                             />
-                            <Text style={styles.text}>Cubra o nariz e boca ao espirrar ou tossir.</Text>
+                            <Text>Cubra o nariz e boca ao espirrar ou tossir.</Text>
                         </Card>
 
                         <Card style={styles.card}>
                             <Image
-                                style={styles.image}
                                 source={require('../../assets/cuidado3.png')}
                             />
-                            <Text style={styles.text}>Evite aglomerações se estiver doente.</Text>
+                            <Text>Evite aglomerações se estiver doente.</Text>
                         </Card>
 
                         <Card style={styles.card}>
                             <Image
-                                style={styles.image}
                                 source={require('../../assets/cuidado4.png')}
                             />
-                            <Text style={styles.text}>Mantenha os ambientes bem ventilados.</Text>
+                            <Text>Mantenha os ambientes bem ventilados.</Text>
                         </Card>
 
                         <Card style={styles.card}>
                             <Image
-                                style={styles.image}
                                 source={require('../../assets/cuidado5.png')}
                             />
-                            <Text style={styles.text}>Não compartilhe objetos pessoais.</Text>
+                            <Text>Não compartilhe objetos pessoais.</Text>
                         </Card>
 
                         <Card style={styles.card}>
-                            <Text style={styles.textbig}>A <B>Organização Mundial da Saúde</B> reforça que as medidas de isolamento social são a melhor alternativa pra conter a propagação do vírus.</Text>
+                            <BigText>A <B>Organização Mundial da Saúde</B> reforça que as medidas de isolamento social são a melhor alternativa pra conter a propagação do vírus.</BigText>
                         </Card>
-                    </View>
+                    </Container>
                 </ScrollView>
+            </View>
         </>
     );
 }

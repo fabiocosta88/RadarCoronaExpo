@@ -1,62 +1,75 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      top: '1%'
-    },
-    text: {
-      color: '#000',
-      fontSize: 18,
-      textAlignVertical: 'center',
-      left: 5,
-      flex: 1,
-      flexDirection: 'row',
-      flexWrap: 'wrap'
-    },
-    textcontainer:{
-        width: 0,
-        flexGrow: 1,
-    },
-    card: {
-        padding: 10,
-        margin: 10,
-        height: '7%',
-        flexDirection: 'row'
-    },
-    cardtitle: {
-        margin: 5,
-        height: '6%',
-        flexDirection: 'row'
-    },
-    boldtext: {
-        fontWeight: 'bold'
-    },
-    image: {
-        height: 60,
-        width: 60
-    },
-    cardbig: {
-        padding: 10,
-        margin: 10,
-        height: '13%',
-        flexDirection: 'row'
-    },
-    textbig: {
-        color: '#000',
-        fontSize: 16,
-        textAlignVertical: 'center',
-        textAlign: 'center',
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap'
-      },
-    title: {
-        color: '#000',
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        top: '30%'
-    },
-});
+import { colors } from '../../styles/colors';
+
+export const Container = styled.View`
+      flex: 1;
+      align-items: center;
+      top: 1%;
+`;
+
+export const Image = styled.Image`
+    height: 60;
+    width: 60;
+`;
+
+export const Text = styled.Text`
+    color: #000;
+    font-size: 18;
+    text-align: center;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+`;
+
+export const Title = styled.Text`
+    color: ${colors.white};
+    font-size: 22;
+    font-weight: bold;
+    text-align: center;
+    top: 20%;
+`;
+
+export const BigTitle = styled.Text`
+    font-size: 36;
+    font-weight: bold;
+    left: 5%;
+    top: 1%;
+    padding-bottom: 5%;
+    color: ${colors.white};
+    background-color: ${colors.primary};
+`;
+
+export const BigText = styled.Text`
+    color: #000;
+    font-size: 15;
+    text-align: center;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 1%;
+`;
+
+export const BoldText = styled.Text`
+    font-weight: bold;
+`;
+
+export const TextContainer = styled.View`
+    width: 0;
+    flex-grow: 1;
+`;
+
+export const TitleContainer = styled.View`
+    background-color: ${colors.redPink};
+    height: 30%;
+    border-top-left-radius: 15;
+    border-top-right-radius: 15;
+`;
+
+export const BigTitleContainer = styled.View`
+    background-color: ${colors.redPink};
+    height: 100%;
+    border-radius: 15;
+`;
+
+

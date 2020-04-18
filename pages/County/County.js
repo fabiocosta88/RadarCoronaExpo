@@ -105,7 +105,7 @@ export default function County() {
                                 <Card
                                     title='Casos'
                                     info={data.cases}
-                                    color={colors.yellow}
+                                    color={colors.redPink}
                                 />
                                 <Card
                                     title='Óbitos'
@@ -117,24 +117,24 @@ export default function County() {
                                 <Card
                                     title='Recuperados'
                                     info={data.recovered}
-                                    color={colors.green}
+                                    color={colors.redPink}
                                 />
                                 <Card
                                     title='Suspeitos'
                                     info={data.suspectsTotal}
-                                    color={colors.purple}
+                                    color={colors.redPink}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='Negativos'
                                     info={data.casesNegative}
-                                    color={colors.green}
+                                    color={colors.redPink}
                                 />
                                 <Card
                                     title='Importados'
                                     info={data.imported_cases}
-                                    color={colors.purple}
+                                    color={colors.redPink}
                                 />
                             </ViewCustom>
                             <MediumTitle>Boletim Diário:</MediumTitle>
@@ -142,12 +142,12 @@ export default function County() {
                                 <Card
                                     title='Casos Hoje'
                                     info={data.newCases}
-                                    color={colors.yellow}
+                                    color={colors.purple}
                                 />
                                 <Card
                                     title='Óbitos Hoje'
                                     info={data.newDeaths}
-                                    color={colors.redPink}
+                                    color={colors.purple}
                                 />
                             </ViewCustom>
                             <MediumTitle>Suspeitos:</MediumTitle>
@@ -155,24 +155,24 @@ export default function County() {
                                 <Card
                                     title='Em casa'
                                     info={data.suspectsHome}
-                                    color={colors.yellow}
+                                    color={colors.blue}
                                 />
                                 <Card
                                     title='Enfermaria'
                                     info={data.suspectsHospital}
-                                    color={colors.redPink}
+                                    color={colors.blue}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='UTI'
                                     info={data.suspectsUti}
-                                    color={colors.yellow}
+                                    color={colors.blue}
                                 />
                                 <Card
                                     title='Óbitos'
                                     info={data.suspectsDeath}
-                                    color={colors.redPink}
+                                    color={colors.blue}
                                 />
                             </ViewCustom>
                         </ViewCounty>
