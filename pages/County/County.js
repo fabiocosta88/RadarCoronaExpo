@@ -60,25 +60,6 @@ export default function County() {
 
     const newData = data;
 
-    const {
-        cases,
-        casesNegative,
-        city_name,
-        deaths,
-        imported_cases,
-        newCases,
-        newDeaths,
-        newSuspects,
-        recovered,
-        status,
-        suspectsDeath,
-        suspectsHome,
-        suspectsHospital,
-        suspectsTotal,
-        suspectsUti,
-        update,
-    } = data;
-
     return (
         <>
             <ContainerView>
@@ -116,41 +97,43 @@ export default function County() {
 
                     {!showThings && (
                         <ViewCounty showsVerticalScrollIndicator={false}>
-                            <CityTitle>{city_name}</CityTitle>
-                            <CityUpdate>Atualizado em: {update}</CityUpdate>
+                            <CityTitle>{data.city_name}</CityTitle>
+                            <CityUpdate>
+                                Atualizado em: {data.update}
+                            </CityUpdate>
                             <ViewCustom>
                                 <Card
                                     title='Casos'
-                                    info={cases}
+                                    info={data.cases}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Óbitos'
-                                    info={deaths}
+                                    info={data.deaths}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='Recuperados'
-                                    info={recovered}
+                                    info={data.recovered}
                                     color={colors.green}
                                 />
                                 <Card
                                     title='Suspeitos'
-                                    info={suspectsTotal}
+                                    info={data.suspectsTotal}
                                     color={colors.purple}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='Negativos'
-                                    info={casesNegative}
+                                    info={data.casesNegative}
                                     color={colors.green}
                                 />
                                 <Card
                                     title='Importados'
-                                    info={imported_cases}
+                                    info={data.imported_cases}
                                     color={colors.purple}
                                 />
                             </ViewCustom>
@@ -158,12 +141,12 @@ export default function County() {
                             <ViewCustom>
                                 <Card
                                     title='Casos Hoje'
-                                    info={newCases}
+                                    info={data.newCases}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Óbitos Hoje'
-                                    info={newDeaths}
+                                    info={data.newDeaths}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
@@ -171,24 +154,24 @@ export default function County() {
                             <ViewCustom>
                                 <Card
                                     title='Em casa'
-                                    info={suspectsHome}
+                                    info={data.suspectsHome}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Enfermaria'
-                                    info={suspectsHospital}
+                                    info={data.suspectsHospital}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
                             <ViewCustom>
                                 <Card
                                     title='UTI'
-                                    info={suspectsUti}
+                                    info={data.suspectsUti}
                                     color={colors.yellow}
                                 />
                                 <Card
                                     title='Óbitos'
-                                    info={suspectsDeath}
+                                    info={data.suspectsDeath}
                                     color={colors.redPink}
                                 />
                             </ViewCustom>
