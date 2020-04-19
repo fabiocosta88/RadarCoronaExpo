@@ -7,6 +7,14 @@ import tz from 'moment-timezone';
 // Services
 import getBrazilTotals from '../../utils/services/BrazilService';
 import getGlobalTotals from '../../utils/services/GlobalService';
+import getCountries from '../../utils/services/CountriesService';
+import getCountryData from '../../utils/services/CountryService';
+
+// Helpers
+import { formatCountriesResponse } from '../../utils/helpers/CountriesHelper';
+
+// Components
+import { Dropdown } from 'react-native-material-dropdown';
 
 // Styled Components
 import {
@@ -18,6 +26,7 @@ import {
     CardContainer,
     GlobalContainer,
     GlobalTitle,
+    WhiteLabel,
 } from './HomeStyles';
 
 import Card from './Card/Card';
@@ -29,6 +38,9 @@ export default function Home() {
     const [data, setData] = useState([]);
     const [opacityG, setOpacityG] = useState('0.3');
     const [opacityBr, setOpacityBr] = useState('1');
+    const [count, setCount] = useState([]);
+    const [dropDisplay, setDropDisplay] = useState('none');
+    const [title, setTitle] = useState('Dados gerais');
 
     useEffect(() => {
         async function fetchData() {
@@ -47,6 +59,13 @@ export default function Home() {
     async function fetchGlobalData() {
         const response = await getGlobalTotals();
         setData(response);
+        const responseCoun = await getCountries();
+        setCount(formatCountriesResponse(responseCoun));
+    }
+
+    async function fetchCountryData(name) {
+        const response = await getCountryData(name);
+        setData(response);
     }
 
     async function fetchData() {
@@ -58,12 +77,16 @@ export default function Home() {
         fetchGlobalData();
         setOpacityG('1');
         setOpacityBr('0.3');
+        setDropDisplay('flex');
+        setTitle('Global');
     };
 
     const handlePressBr = () => {
         fetchData();
         setOpacityBr('1');
         setOpacityG('0.3');
+        setTitle('Dados gerais');
+        setDropDisplay('none');
     };
 
     return (
@@ -78,9 +101,27 @@ export default function Home() {
                             <GlobalTitle opacity={opacityG}>Global</GlobalTitle>
                         </TouchableOpacity>
                     </GlobalContainer>
-                    <SubTitle>Dados gerais</SubTitle>
+                    <SubTitle>{title}</SubTitle>
                     <Updated>Atualizado em: {date}</Updated>
                 </TitleContainer>
+                <WhiteLabel display={dropDisplay}>
+                    <Dropdown
+                        label='País'
+                        fontSize={16}
+                        labelFontSize={18}
+                        data={count}
+                        baseColor='#000'
+                        containerStyle={{
+                            width: '85%',
+                            top: '-2%',
+                        }}
+                        onChangeText={(value) => {
+                            setTitle(value);
+                            fetchCountryData(value);
+                        }}
+                    />
+                </WhiteLabel>
+
                 <CardContainer>
                     <Card
                         title='Casos confirmados'

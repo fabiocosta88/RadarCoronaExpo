@@ -3,6 +3,8 @@ export const endpointsCoronaLmao = {
     routes: {
         globalTotals: '/v2/all',
         brazilTotals: '/v2/countries/brazil',
+        countries: '/v2/countries',
+        country: '/v2/countries/',
     },
 };
 
