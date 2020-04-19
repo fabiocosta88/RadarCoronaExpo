@@ -6,6 +6,10 @@ const handleOpacity = (opacity) => {
     return opacity;
 };
 
+const handleDisplay = (display) => {
+    return display;
+};
+
 export const ContainerView = styled.View`
     height: 100%;
     align-items: center;
@@ -62,4 +66,13 @@ export const GlobalContainer = styled.View`
     width: 100%;
     padding-left: 45%;
     margin-top: -62px;
+`;
+
+export const WhiteLabel = styled.View`
+    width: 100%;
+    background-color: ${colors.white};
+    align-items: center;
+    height: 70px;
+    margin-bottom: 15px;
+    display: ${({ display }) => handleDisplay(display)};
 `;
