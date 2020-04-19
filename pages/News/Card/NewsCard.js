@@ -41,7 +41,7 @@ export default function NewsCard({ title, image, description, author, url, publi
                         }}
                     />
                     <TitleContainer>
-                        <Title>{title}</Title>
+                        <Title numberOfLines={3}>{title}</Title>
                     </TitleContainer>
                     <FooterContainer>
                         <Date>Publicado em: {date}</Date>
