@@ -16,7 +16,7 @@ export const endpointsCoronaTracker = {
 export const endpointsNews = {
     host: 'http://newsapi.org',
     routes: {
-        topCoronaNewsBr: '/v2/top-headlines',
+        topCoronaNewsBr: '/v2/everything',
     },
 };
 
