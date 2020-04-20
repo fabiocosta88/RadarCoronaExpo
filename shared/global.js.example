@@ -8,10 +8,11 @@ export const endpointsCoronaLmao = {
     },
 };
 
-export const endpointsCoronaTracker = {
-    host: 'http://coronavirus-tracker-api.herokuapp.com',
+export const endpointsStates = {
+    host: 'https://covid19-brazil-api.now.sh',
     routes: {
-        brazilTotals: '/v2/locations/28',
+        states: '/api/report/v1',
+        state: '/api/report/v1/brazil/uf/',
     },
 };
 

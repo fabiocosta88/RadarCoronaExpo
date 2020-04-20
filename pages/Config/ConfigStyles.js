@@ -7,10 +7,11 @@ export const Container = styled.View`
 `;
 
 export const Text = styled.Text`
-    font-size: 18;
+    font-size: 20;
     left: 40%;
+    flex: 1;
+    flex-wrap: wrap;
     top: 1%;
-    text-align: center;
     color: ${colors.black};
 `;
 
@@ -54,15 +55,14 @@ export const CenteredView = styled.View`
     align-items: center;
 `;
 
-export const ItemList = styled.TouchableOpacity`
-    flex-direction: row;
+export const CustomView = styled.View`
+    top: 2%;
+    width: 98%;
+    left: 1%;
 `;
 
-export const ItemListDark = styled.TouchableOpacity`
+export const ItemList = styled.TouchableOpacity`
     flex-direction: row;
-    top: 4%;
-    height: 8%;
-    margin-bottom: 5%;
 `;
 
 export const Separator = styled.View`

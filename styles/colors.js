@@ -8,7 +8,3 @@ export let colors = {
     green: '#74c44f',
     purple: '#7c58a5',
 };
-
-export function setPrimary(value) {
-    colors.primary = value;
-  }

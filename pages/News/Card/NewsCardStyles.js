@@ -47,8 +47,10 @@ export const Date = styled.Text`
 export const Title = styled.Text`
     text-align: center;
     top: 1%;
-    font-size: 21;
+    font-size: 19;
     font-weight: bold;
+    flex-direction: row;
+    flex-wrap: wrap;
 `;
 
 

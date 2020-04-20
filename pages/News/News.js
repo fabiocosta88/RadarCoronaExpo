@@ -47,7 +47,6 @@ export default function News() {
                 <Title>Últimas notícias</Title>
                 <FlatList
                     data={data.articles}
-                    initialNumToRender={20}
                     ListEmptyComponent={emptyList}
                     renderItem={({ item }) => (
                         <Container>
