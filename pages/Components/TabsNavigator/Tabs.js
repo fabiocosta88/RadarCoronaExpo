@@ -31,7 +31,6 @@ export default function MyTabs() {
         <Tab.Navigator
         initialRouteName="home"
         lazy={true}
-        lazyPreloadDistance={1}
         lazyPlaceholder={emptyList}
         tabBarPosition={'bottom'}
         tabBarOptions={{
