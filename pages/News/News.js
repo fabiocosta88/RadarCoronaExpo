@@ -9,8 +9,6 @@ import {
     Container,
     Title,
     Background,
-    PinkLabel,
-    FakeNewsAlert,
     LoadWraper,
 } from './NewsStyles';
 
@@ -31,7 +29,7 @@ function emptyList() {
 }
 
 export default function News() {
-    const [data, setData] = useState(0);
+    const [data, setData] = useState();
 
     useEffect(() => {
         async function fetchData() {
@@ -46,7 +44,7 @@ export default function News() {
             <Background>
                 <Title>Últimas notícias</Title>
                 <FlatList
-                    data={data.articles}
+                    data={data}
                     ListEmptyComponent={emptyList}
                     renderItem={({ item }) => (
                         <Container>
