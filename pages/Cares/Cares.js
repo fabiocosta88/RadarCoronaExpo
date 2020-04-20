@@ -20,7 +20,6 @@ import { colors } from '../../styles/colors'
 
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
-
 const styles = StyleSheet.create({
     card: {
         padding: 10,

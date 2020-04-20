@@ -2,11 +2,12 @@ import axios from 'axios';
 import { endpointsNews } from '../../shared/global';
 
 export default async function getTopNewsBr() {
-    const apiKey = '0f0ecd6476234a62b8661b1be945b153';
+    const apiKey = '693d7fef99a2444c9aff590e9f9ee574';
     const q = 'covid OR corona';
     const language = 'pt';
     const domains = 'globo.com,terra.com.br';
     const pageSize = '20';
+    const sortBy = 'publishedAt';
     try {
         const {
             host,
@@ -19,6 +20,7 @@ export default async function getTopNewsBr() {
                 language,
                 domains,
                 pageSize,
+                sortBy,
             },
         });
         return response.data;

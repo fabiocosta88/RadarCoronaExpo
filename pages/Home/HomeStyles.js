@@ -10,12 +10,16 @@ const handleDisplay = (display) => {
     return display;
 };
 
-export const ContainerView = styled.View`
+export const ContainerView = styled.ScrollView`
     height: 100%;
-    align-items: center;
-    justify-content: center;
     background-color: ${colors.primary};
 `;
+
+export const ViewContainer = styled.View`
+    align-items: center;
+    justify-content: center;
+`;
+
 
 export const Text = styled.Text`
     color: ${colors.white};
@@ -24,6 +28,7 @@ export const Text = styled.Text`
 
 export const CardContainer = styled.View`
     width: 100%;
+    margin-top: 4%;
     flex: 8;
 `;
 
@@ -52,12 +57,15 @@ export const TitleContainer = styled.View`
 
 export const SubTitle = styled.Text`
     font-size: 28;
+    top: -5%;
     left: -5%;
+    font-weight: bold;
     color: ${colors.white};
 `;
 
 export const Updated = styled.Text`
     font-size: 16;
+    top: -5%;
     left: -5%;
     color: ${colors.white};
 `;
@@ -66,13 +74,4 @@ export const GlobalContainer = styled.View`
     width: 100%;
     padding-left: 45%;
     margin-top: -62px;
-`;
-
-export const WhiteLabel = styled.View`
-    width: 100%;
-    background-color: ${colors.white};
-    align-items: center;
-    height: 70px;
-    margin-bottom: 15px;
-    display: ${({ display }) => handleDisplay(display)};
 `;
